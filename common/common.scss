@@ -46,3 +46,17 @@ body {
     position: initial;
   }
 }
+
+thead .category-title-link {
+  pointer-events: none;
+  cursor: default;
+  color: var(--primary);
+}
+
+tbody .category-title-link {
+  color: var(--tertiary);
+}
+
+.topic-category:first-child {
+  display: none;
+}
