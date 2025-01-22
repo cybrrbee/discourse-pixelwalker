@@ -60,3 +60,12 @@ tbody .category-title-link span.category-name {
 .topic-category > a:first-child {
   display: none;
 }
+
+body.category-official-info #create-topic,
+body.category-game-discussion #create-topic,
+body.category-game-feedback #create-topic,
+body.category-meta #create-topic,
+body.category-off-topic #create-topic,
+body.category-staff #create-topic {
+  display: none;
+}
