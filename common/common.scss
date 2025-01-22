@@ -71,7 +71,7 @@ body.category-off-topic #create-topic,
 body.category-staff #create-topic,
 .category-input .name > span:first-child,
 .topic-category > a:first-child,
-.badge-category > .badge-category__name:first-child {
+.categories-wrapper > a:first-child {
   display: none;
 }
 
