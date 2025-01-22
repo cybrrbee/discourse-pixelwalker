@@ -104,8 +104,14 @@ body.category-staff #create-topic,
 .admin-customize .themes-list-container__item.selected,
 .admin-customize .themes-list-container__item.selected .components-list,
 .d-toggle-switch__checkbox-slider::before,
-[data-content][data-identifier="user-tip"] .btn-primary {
+[data-content][data-identifier="user-tip"],
+.badge-notification[href] {
   color: var(--dark);
+}
+
+[data-content][data-identifier="user-tip"] .btn-primary {
+  background: var(--dark);
+  color: var(--tertiary);
 }
 
 .select-kit-body,
