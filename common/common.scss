@@ -4,6 +4,7 @@
   --header_background: rgba(0, 0, 0, 0);
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
   --background-color: rgb(6, 19, 28);
+  --dark-text: #222222;
   --header-height: 64px;
   --blur-radius: 10px;
   --background-brightness: 15%;
@@ -55,6 +56,11 @@ thead .category-title-link {
 
 tbody .category-title-link span.category-name {
   color: var(--tertiary);
+  transition: filter 0.3s ease-in-out;
+}
+
+tbody .category-title-link:hover span.category-name {
+  filter: brightness(1.2);
 }
 
 .topic-category > a:first-child {
@@ -68,4 +74,11 @@ body.category-meta #create-topic,
 body.category-off-topic #create-topic,
 body.category-staff #create-topic {
   display: none;
+}
+
+.install-theme-item input:checked + label,
+.btn-primary,
+.btn-danger,
+.btn-primary .d-icon {
+  color: var(--dark-text);
 }
