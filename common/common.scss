@@ -70,7 +70,8 @@ body.category-meta #create-topic,
 body.category-off-topic #create-topic,
 body.category-staff #create-topic,
 .category-input .name > span:first-child,
-.topic-category > a:first-child {
+.topic-category > a:first-child,
+.badge-category > .badge-category__name:first-child {
   display: none;
 }
 
