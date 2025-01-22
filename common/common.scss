@@ -53,10 +53,10 @@ thead .category-title-link {
   color: var(--primary);
 }
 
-tbody .category-title-link {
+tbody .category-title-link span.category-name {
   color: var(--tertiary);
 }
 
-.topic-category:first-child {
+.topic-category > a:first-child {
   display: none;
 }
