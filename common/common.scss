@@ -63,22 +63,23 @@ tbody .category-title-link:hover span.category-name {
   filter: brightness(1.2);
 }
 
-.topic-category > a:first-child {
-  display: none;
-}
-
 body.category-official-info #create-topic,
 body.category-game-discussion #create-topic,
 body.category-game-feedback #create-topic,
 body.category-meta #create-topic,
 body.category-off-topic #create-topic,
-body.category-staff #create-topic {
+body.category-staff #create-topic,
+.category-input .name > span:first-child,
+.topic-category > a:first-child {
   display: none;
 }
 
 .install-theme-item input:checked + label,
 .btn-primary,
 .btn-danger,
-.btn-primary .d-icon {
+.btn-primary .d-icon,
+.admin-customize .themes-list-container__item.selected,
+.admin-customize .themes-list-container__item.selected .components-list,
+.d-toggle-switch__checkbox-slider::before {
   color: var(--dark-text);
 }
