@@ -83,3 +83,8 @@ body.category-staff #create-topic,
 .d-toggle-switch__checkbox-slider::before {
   color: var(--dark-text);
 }
+
+.reply-area {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
