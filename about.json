@@ -1,13 +1,5 @@
 {
   "name": "PixelWalker",
   "about_url": "https://github.com/cybrrbee/discourse-pixelwalker",
-  "license_url": "https://github.com/cybrrbee/discourse-pixelwalker/blob/master/LICENSE",
-  "assets": {
-    "bg_small.avif": "assets/bg_small.avif",
-    "bg_large.avif": "assets/bg_large.avif",
-    "bg_small.webp": "assets/bg_small.webp",
-    "bg_large.webp": "assets/bg_large.webp",
-    "bg_small.png": "assets/bg_small.png",
-    "bg_large.png": "assets/bg_large.png"
-  }
+  "license_url": "https://github.com/cybrrbee/discourse-pixelwalker/blob/master/LICENSE"
 }
