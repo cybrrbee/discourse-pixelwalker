@@ -76,12 +76,27 @@ body.category-staff #create-topic,
 }
 
 .install-theme-item input:checked + label,
+.btn.ok,
+.btn.ok:hover,
+.btn.ok.no-text,
+.btn.ok.no-text:hover,
+.btn.ok.no-text .d-icon,
+.btn.ok:hover.no-text .d-icon,
+.btn.cancel,
+.btn.cancel:hover,
+.btn.cancel .d-icon,
+.btn.cancel:hover .d-icon,
+.btn.cancel.no-text .d-icon,
+.btn.cancel:hover.no-text .d-icon,
+.btn.cancel.no-text,
 .btn-primary,
 .btn-primary:hover,
-.btn-danger,
-.btn-danger:hover,
 .btn-primary .d-icon,
 .btn-primary:hover .d-icon,
+.btn-danger,
+.btn-danger:hover,
+.discourse-no-touch .btn.cancel:hover,
+.discourse-no-touch .btn.cancel:hover .d-icon,
 .discourse-no-touch .btn-primary:hover .d-icon,
 .discourse-no-touch .btn-primary:hover,
 .discourse-no-touch .btn-danger:hover,
@@ -93,7 +108,8 @@ body.category-staff #create-topic,
   color: var(--dark);
 }
 
-.select-kit-body {
+.select-kit-body,
+.dropdown-menu {
   background: var(--dark) !important;
 }
 
