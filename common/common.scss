@@ -115,11 +115,9 @@ body.category-staff #create-topic,
 }
 
 .select-kit-body,
-.dropdown-menu {
-  background: var(--dark) !important;
-}
-
+.dropdown-menu,
+.menu-panel,
 .reply-area {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
 }
