@@ -4,7 +4,7 @@
   --header_background: rgba(0, 0, 0, 0);
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
   --background-color: rgb(6, 19, 28);
-  --dark-text: #222222;
+  --dark: #222222;
   --header-height: 64px;
   --blur-radius: 10px;
   --background-brightness: 15%;
@@ -88,7 +88,11 @@ body.category-staff #create-topic,
 .admin-customize .themes-list-container__item.selected,
 .admin-customize .themes-list-container__item.selected .components-list,
 .d-toggle-switch__checkbox-slider::before {
-  color: var(--dark-text);
+  color: var(--dark);
+}
+
+.select-kit-body {
+  background: var(--dark);
 }
 
 .reply-area {
