@@ -76,8 +76,11 @@ body.category-staff #create-topic,
 
 .install-theme-item input:checked + label,
 .btn-primary,
+.btn-primary:hover,
 .btn-danger,
+.btn-danger:hover,
 .btn-primary .d-icon,
+.btn-primary:hover .d-icon,
 .admin-customize .themes-list-container__item.selected,
 .admin-customize .themes-list-container__item.selected .components-list,
 .d-toggle-switch__checkbox-slider::before {
