@@ -88,7 +88,8 @@ body.category-staff #create-topic,
 .discourse-no-touch .btn:hover,
 .admin-customize .themes-list-container__item.selected,
 .admin-customize .themes-list-container__item.selected .components-list,
-.d-toggle-switch__checkbox-slider::before {
+.d-toggle-switch__checkbox-slider::before,
+[data-content][data-identifier="user-tip"] .btn-primary {
   color: var(--dark);
 }
 
