@@ -74,15 +74,13 @@ body {
   }
 }
 
-// thead .category-title-link {
-//   pointer-events: none;
-//   cursor: default;
-//   color: var(--primary);
-// }
-
 a {
   color: var(--tertiary);
   transition: filter 0.2s ease-in-out;
+}
+
+a.category-name {
+  color: var(--tertiary);
 }
 
 a:hover {
