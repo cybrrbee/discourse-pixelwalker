@@ -9,7 +9,14 @@
 }
 
 body {
-  background: var(--background-color);
+  background-color: var(--background-color);
+  background-image: url($bg-2x-jpg);
+  background-image: image-set(
+    $bg-avif type("image/avif") 1x,
+    $bg-2x-avif type("image/avif") 2x,
+    $bg-jpg type("image/jpeg") 1x,
+    $bg-2x-jpg type("image/jpeg") 2x
+  );
 }
 
 .sidebar-footer-container {
