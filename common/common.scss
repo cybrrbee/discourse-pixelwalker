@@ -1,6 +1,7 @@
 :root {
-  --d-sidebar-admin-background: rgba(0, 0, 0, 0);
-  --header_background: rgba(0, 0, 0, 0);
+  --d-sidebar-admin-background: transparent;
+  --header_background: transparent;
+  --d-sidebar-background: transparent;
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
   --background-color: rgb(6, 19, 28);
   --header-height: 4em;
@@ -117,6 +118,14 @@ a {
   &:hover {
     filter: brightness(1.3);
   }
+}
+
+.notification.read {
+  background-color: transparent;
+}
+
+.notification.unread {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .select-kit-body,
