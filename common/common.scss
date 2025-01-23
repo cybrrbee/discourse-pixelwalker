@@ -27,17 +27,16 @@ body {
   background-color: var(--background-color);
   background-image: url($bg-2x-jpg);
   background-image: image-set(
-    $bg-avif type("image/avif") 1x,
-    $bg-2x-avif type("image/avif") 2x,
-    $bg-jpg type("image/jpeg") 1x,
-    $bg-2x-jpg type("image/jpeg") 2x
+    url($bg-avif) type("image/avif") 1x,
+    url($bg-2x-avif) type("image/avif") 2x,
+    url($bg-jpg) type("image/jpeg") 1x,
+    url($bg-2x-jpg) type("image/jpeg") 2x
   );
 }
 
 header::before {
   content: "";
-  height: 100vh;
-  height: 100lvh;
+  height: var(--header-height);
   width: 100vw;
   width: 100lvw;
   position: fixed;
@@ -53,10 +52,10 @@ header {
   background-color: var(--background-color);
   background-image: url($bg-2x-jpg);
   background-image: image-set(
-    $bg-avif type("image/avif") 1x,
-    $bg-2x-avif type("image/avif") 2x,
-    $bg-jpg type("image/jpeg") 1x,
-    $bg-2x-jpg type("image/jpeg") 2x
+    url($bg-avif) type("image/avif") 1x,
+    url($bg-2x-avif) type("image/avif") 2x,
+    url($bg-jpg) type("image/jpeg") 1x,
+    url($bg-2x-jpg) type("image/jpeg") 2x
   );
 }
 
