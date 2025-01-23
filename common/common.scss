@@ -8,55 +8,61 @@
   --background-brightness: 15%;
 }
 
-body::before {
-  content: "";
-  height: 100vh;
-  height: 100lvh;
-  width: 100vw;
-  width: 100lvw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  overflow: hidden;
-  backdrop-filter: blur(10px) brightness(20%);
-  -webkit-backdrop-filter: blur(10px) brightness(20%);
-}
-
 body {
-  background-color: var(--background-color);
-  background-image: url($bg-2x-jpg);
-  background-image: image-set(
-    url($bg-avif) type("image/avif") 1x,
-    url($bg-2x-avif) type("image/avif") 2x,
-    url($bg-jpg) type("image/jpeg") 1x,
-    url($bg-2x-jpg) type("image/jpeg") 2x
-  );
-}
+  background: {
+    color: var(--background-color);
+    image: url($bg-2x-jpg);
+    image: image-set(
+      url($bg-avif) type("image/avif") 1x,
+      url($bg-2x-avif) type("image/avif") 2x,
+      url($bg-jpg) type("image/jpeg") 1x,
+      url($bg-2x-jpg) type("image/jpeg") 2x
+    );
+    size: cover;
+  }
 
-header::before {
-  content: "";
-  height: var(--header-height);
-  width: 100vw;
-  width: 100lvw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  overflow: hidden;
-  backdrop-filter: blur(10px) brightness(20%);
-  -webkit-backdrop-filter: blur(10px) brightness(20%);
+  &::before {
+    content: "";
+    height: 100vh;
+    height: 100lvh;
+    width: 100vw;
+    width: 100lvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    backdrop-filter: blur(10px) brightness(20%);
+    -webkit-backdrop-filter: blur(10px) brightness(20%);
+  }
 }
 
 header {
-  background-color: var(--background-color);
-  background-image: url($bg-2x-jpg);
-  background-image: image-set(
-    url($bg-avif) type("image/avif") 1x,
-    url($bg-2x-avif) type("image/avif") 2x,
-    url($bg-jpg) type("image/jpeg") 1x,
-    url($bg-2x-jpg) type("image/jpeg") 2x
-  );
+  background: {
+    color: var(--background-color);
+    image: url($bg-2x-jpg);
+    image: image-set(
+      url($bg-avif) type("image/avif") 1x,
+      url($bg-2x-avif) type("image/avif") 2x,
+      url($bg-jpg) type("image/jpeg") 1x,
+      url($bg-2x-jpg) type("image/jpeg") 2x
+    );
+    size: cover;
+  }
+
+  &::before {
+    content: "";
+    height: var(--header-height);
+    width: 100vw;
+    width: 100lvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    backdrop-filter: blur(10px) brightness(20%);
+    -webkit-backdrop-filter: blur(10px) brightness(20%);
+  }
 }
 
 @supports not (backdrop-filter: blur(10px)) {
@@ -103,14 +109,14 @@ header {
 a {
   color: var(--tertiary);
   transition: filter 0.2s ease-in-out;
-}
 
-a.category-name {
-  color: var(--tertiary);
-}
+  &.category-name {
+    color: var(--tertiary);
+  }
 
-a:hover {
-  filter: brightness(1.3);
+  &:hover {
+    filter: brightness(1.3);
+  }
 }
 
 .select-kit-body,
