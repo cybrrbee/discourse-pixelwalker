@@ -3,7 +3,7 @@
   --header_background: rgba(0, 0, 0, 0);
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
   --background-color: rgb(6, 19, 28);
-  --header-height: 64px;
+  --header-height: 4em;
   --blur-radius: 10px;
   --background-brightness: 15%;
 }
@@ -34,8 +34,35 @@ body {
   );
 }
 
+header::before {
+  content: "";
+  height: 100vh;
+  height: 100lvh;
+  width: 100vw;
+  width: 100lvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  backdrop-filter: blur(10px) brightness(20%);
+  -webkit-backdrop-filter: blur(10px) brightness(20%);
+}
+
+header {
+  background-color: var(--background-color);
+  background-image: url($bg-2x-jpg);
+  background-image: image-set(
+    $bg-avif type("image/avif") 1x,
+    $bg-2x-avif type("image/avif") 2x,
+    $bg-jpg type("image/jpeg") 1x,
+    $bg-2x-jpg type("image/jpeg") 2x
+  );
+}
+
 @supports not (backdrop-filter: blur(10px)) {
-  body {
+  body,
+  header {
     background-image: none;
   }
 }
