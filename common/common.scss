@@ -175,9 +175,7 @@ a {
   height: calc(250px + 2em);
 }
 
-.btn,
-.d-modal.json-schema-editor-modal .je-ready button,
-.d-modal.json-schema-editor-modal .je-ready .json-editor-btn-add {
+.btn-default {
   background: transparent;
   backdrop-filter: var(--bd-filter-light);
 }
