@@ -8,13 +8,16 @@
   --blur-radius: 10px;
   --background-brightness: 15%;
 
-  --bd-filter-lighter: blur(2px) brightness(12);
   --bd-filter-light: blur(5px) brightness(2);
   --bd-filter-dark: blur(5px) brightness(0.5);
   --bd-filter-background: blur(10px) brightness(0.2);
 
   --font-family: "Cabin", Arial, sans-serif;
   --heading-font-family: "Cabin", Arial, sans-serif;
+
+  --primary: rgb(234, 234, 234);
+  --secondary: rgb(16, 16, 16);
+  --tertiary: rgb(255, 222, 112);
 }
 
 @font-face {
@@ -252,8 +255,19 @@ a {
   .je-ready
   .discourse-no-touch
   .btn-hover.json-editor-btn-add {
-  background: transparent;
-  backdrop-filter: var(--bd-filter-lighter);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.btn-icon {
+  backdrop-filter: none;
+}
+
+.sidebar-section-wrapper
+  .sidebar-section-header.sidebar-section-header-collapsable:hover,
+.sidebar-section-wrapper
+  .sidebar-section-header.sidebar-section-header-collapsable:hover
+  .d-icon {
+  color: var(--primary-low);
 }
 
 .sidebar-footer-wrapper .sidebar-footer-container::before {
