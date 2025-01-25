@@ -165,8 +165,8 @@ a {
   height: calc(250px + 2em);
 }
 
-.sidebar-footer-container {
-  background: transparent;
+.sidebar-footer-wrapper .sidebar-footer-container::before {
+  all: initial;
 }
 
 .dashboard-next .nav::before {
