@@ -6,6 +6,8 @@
     "bg-jpg": "assets/backgrounds/bg.jpg",
     "bg-avif": "assets/backgrounds/bg.avif",
     "bg-2x-jpg": "assets/backgrounds/bg-2x.jpg",
-    "bg-2x-avif": "assets/backgrounds/bg-2x.avif"
+    "bg-2x-avif": "assets/backgrounds/bg-2x.avif",
+    "cabin": "assets/fonts/cabin.ttf",
+    "cabin-italic": "assets/fonts/cabin-italic.ttf"
   }
 }
