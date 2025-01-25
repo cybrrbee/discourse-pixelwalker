@@ -38,37 +38,8 @@ body {
   }
 }
 
-header {
-  background: {
-    color: var(--background-color);
-    image: url($bg-2x-jpg);
-    image: image-set(
-      url($bg-avif) type("image/avif") 1x,
-      url($bg-2x-avif) type("image/avif") 2x,
-      url($bg-jpg) type("image/jpeg") 1x,
-      url($bg-2x-jpg) type("image/jpeg") 2x
-    );
-    size: cover;
-  }
-
-  &::before {
-    content: "";
-    height: var(--header-height);
-    width: 100vw;
-    width: 100lvw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    overflow: hidden;
-    backdrop-filter: blur(10px) brightness(20%);
-    -webkit-backdrop-filter: blur(10px) brightness(20%);
-  }
-}
-
 @supports not (backdrop-filter: blur(10px)) {
-  body,
-  header {
+  body {
     background-image: none;
   }
 }
