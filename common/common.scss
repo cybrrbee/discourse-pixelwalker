@@ -123,6 +123,11 @@ a {
   }
 }
 
+.category-list tbody .category h3 a[href],
+.category-list tbody .category h4 a[href] {
+  color: var(--tertiary);
+}
+
 .notification.read {
   background-color: transparent;
 }
@@ -175,4 +180,9 @@ a {
 
 .dashboard-next .nav::after {
   all: initial;
+}
+
+#create-topic[disabled],
+#create-topic[disabled] + span {
+  display: none;
 }
