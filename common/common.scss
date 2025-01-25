@@ -90,6 +90,30 @@ body {
   margin-left: 0;
 }
 
+.sidebar-section[data-section-name="categories"] {
+  @if $hide-categories-sidebar {
+    display: none;
+  }
+}
+
+.category-breadcrumb {
+  @if $hide-category-breadcrumb {
+    display: none;
+  } @else {
+    .category-drop {
+      @if $hide-category-dropdown {
+        display: none;
+      }
+    }
+
+    .tag-drop {
+      @if $hide-tag-dropdown {
+        display: none;
+      }
+    }
+  }
+}
+
 a {
   color: var(--tertiary);
   transition: filter 0.2s ease-in-out;
