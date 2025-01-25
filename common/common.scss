@@ -209,6 +209,10 @@ a {
   transform: unset !important;
 }
 
+.select-kit.is-expanded .select-kit-body {
+  background: transparent;
+}
+
 .select-kit .select-kit-body {
   backdrop-filter: blur(5px) brightness(1);
   background: rgba(0, 0, 0, 0.5);
