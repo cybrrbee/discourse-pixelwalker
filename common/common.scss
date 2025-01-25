@@ -17,7 +17,7 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   --primary: rgb(234, 234, 234);
   --secondary: rgb(16, 16, 16);
   --tertiary: rgb(255, 222, 112);
-  --tertiary-low: mix(var(--primary), var(--tertiary), 20%);
+  --tertiary-low: rgb(67, 63, 48);
   --tertiary-hover: rgb(255, 239, 157);
 }
 
@@ -104,14 +104,6 @@ a {
 .category-list tbody .category h3 a[href],
 .category-list tbody .category h4 a[href] {
   color: var(--tertiary);
-}
-
-.notification.read {
-  background-color: transparent;
-}
-
-.notification.unread {
-  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .select-kit-body,
