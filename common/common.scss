@@ -22,6 +22,10 @@ body {
     size: cover;
   }
 
+  @supports not (backdrop-filter: blur(10px)) {
+    background-image: none;
+  }
+
   &::before {
     content: "";
     height: 100vh;
@@ -38,16 +42,26 @@ body {
   }
 }
 
-@supports not (backdrop-filter: blur(10px)) {
-  body {
-    background-image: none;
-  }
-}
-
 .sidebar-footer-container {
   &::before {
     visibility: hidden;
   }
+}
+
+#main-outlet {
+  --1dvh: 1vh;
+  @supports (height: 1dvh) {
+    --1dvh: 1dvh;
+  }
+  position: sticky;
+  height: calc(
+    var(--composer-vh, var(--1dvh)) * 100 - var(--main-outlet-offset, 0px)
+  );
+  top: var(--main-outlet-offset);
+}
+
+#main-outlet::after {
+  content: "";
 }
 
 .bg {
