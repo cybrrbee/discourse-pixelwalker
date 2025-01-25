@@ -237,3 +237,8 @@ a {
 .select-kit.combo-box .select-kit-header {
   background: transparent;
 }
+
+.sidebar-section-link-wrapper .sidebar-section-link:focus,
+.sidebar-section-link-wrapper .sidebar-section-link:hover {
+  filter: brightness(1.3);
+}
