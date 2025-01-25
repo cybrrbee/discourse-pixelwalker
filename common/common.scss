@@ -45,12 +45,6 @@ body {
   }
 }
 
-.sidebar-footer-container {
-  &::before {
-    visibility: hidden;
-  }
-}
-
 #main-outlet {
   --1dvh: 1vh;
   @supports (height: 1dvh) {
@@ -151,8 +145,8 @@ a {
   height: calc(250px + 2em);
 }
 
-.sidebar-footer-container::before {
-  all: initial;
+.sidebar-footer-container {
+  background: transparent;
 }
 
 .dashboard-next .nav::before {
