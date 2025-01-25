@@ -124,3 +124,41 @@ a {
   background: transparent;
   backdrop-filter: var(--bd-filter);
 }
+
+.admin-reports.admin-contents nav,
+.dashboard-next.admin-contents nav {
+  position: relative;
+  width: initial;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.boxed.white {
+  background: transparent;
+}
+
+.dashboard-next .charts .chart-canvas {
+  padding: 1em;
+}
+
+.admin-report-chart {
+  background: white;
+  border-radius: 10px;
+}
+
+.admin-report-stacked-chart .chart-canvas-container {
+  height: calc(250px + 2em);
+}
+
+.sidebar-footer-container::before {
+  all: initial;
+}
+
+.dashboard-next .nav::before {
+  all: initial;
+}
+
+.dashboard-next .nav::after {
+  all: initial;
+}
