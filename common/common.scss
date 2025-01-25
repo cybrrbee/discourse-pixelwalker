@@ -60,7 +60,7 @@ body {
   top: var(--main-outlet-offset);
 }
 
-#main-outlet::after {
+#main-outlet-wrapper::after {
   content: "";
 }
 
