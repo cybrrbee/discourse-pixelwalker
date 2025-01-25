@@ -107,6 +107,10 @@ a {
   color: var(--tertiary);
 }
 
+#reply-control {
+  background: transparent;
+}
+
 .select-kit-body,
 .dropdown-menu,
 .menu-panel,
@@ -189,21 +193,13 @@ a {
   background: color-mix(in srgb, var(--primary) 30%, var(--tertiary-low) 100%);
 }
 
-#private-message-users {
+.select-kit {
   position: relative;
 }
 
-#private-message-users-body {
+.select-kit.is-expanded .select-kit-body {
   position: absolute !important;
   inset: unset !important;
   margin: unset !important;
   transform: unset !important;
-  outline: solid 2px var(--tertiary);
-  border: solid 5px transparent;
-}
-
-.select-kit.multi-select.is-expanded .multi-select-header {
-  border-color: transparent;
-  outline: none;
-  outline-offset: 0;
 }
