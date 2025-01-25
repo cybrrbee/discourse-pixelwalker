@@ -8,7 +8,7 @@
   --blur-radius: 10px;
   --background-brightness: 15%;
 
-  --bd-filter: blur(5px) brightness(0.5);
+  --bd-filter: blur(5px) brightness(0.3);
   --bd-filter-background: blur(10px) brightness(0.2);
 
   --font-family: "Cabin", Arial, sans-serif;
@@ -190,4 +190,31 @@ a {
 #create-topic[disabled],
 #create-topic[disabled] + span {
   display: none;
+}
+
+.user-menu.revamped .tabs-list .btn.active {
+  filter: brightness(3);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-menu.revamped .tabs-list .btn.active:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.user-menu.revamped .tabs-list .btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user-menu .quick-access-panel li,
+.user-menu .quick-access-panel .read {
+  background: transparent;
+}
+
+.user-menu .quick-access-panel li.unread {
+  background: transparent;
+  backdrop-filter: brightness(2);
+}
+
+.user-menu .quick-access-panel li:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
