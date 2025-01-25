@@ -3,9 +3,9 @@
   "about_url": "https://github.com/cybrrbee/discourse-pixelwalker",
   "license_url": "https://github.com/cybrrbee/discourse-pixelwalker/blob/master/LICENSE",
   "assets": {
-    "bg-jpg": "assets/bg.jpg",
-    "bg-avif": "assets/bg.avif",
-    "bg-2x-jpg": "assets/bg-2x.jpg",
-    "bg-2x-avif": "assets/bg-2x.avif"
+    "bg-jpg": "assets/backgrounds/bg.jpg",
+    "bg-avif": "assets/backgrounds/bg.avif",
+    "bg-2x-jpg": "assets/backgrounds/bg-2x.jpg",
+    "bg-2x-avif": "assets/backgrounds/bg-2x.avif"
   }
 }
