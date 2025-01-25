@@ -58,10 +58,7 @@ body {
     var(--composer-vh, var(--1dvh)) * 100 - var(--main-outlet-offset, 0px)
   );
   top: var(--main-outlet-offset);
-}
-
-#main-outlet-wrapper::after {
-  content: "";
+  overflow-y: auto;
 }
 
 .bg {
