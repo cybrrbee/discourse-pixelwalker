@@ -91,7 +91,11 @@ body {
   filter: none;
 }
 
-.discourse-no-touch .powered-by-discourse span {
+.powered-by-discourse__content {
+  background: transparent;
+}
+
+.powered-by-discourse__content {
   background: transparent;
   backdrop-filter: var(--bd-filter);
 }
