@@ -10,6 +10,9 @@
 
   --bd-filter: blur(5px) brightness(50%);
   --bd-filter-background: blur(10px) brightness(20%);
+
+  --font-family: "Cabin", Arial, sans-serif;
+  --header-font-family: "Cabin", Arial, sans-serif;
 }
 
 @font-face {
@@ -29,7 +32,7 @@
 }
 
 body {
-  font-family: "Cabin", Arial, sans-serif;
+  font-family: var(--font-family);
   background: {
     color: var(--background-color);
     image: url($bg-2x-jpg);
