@@ -10,6 +10,7 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   --header_background: transparent;
   --d-sidebar-background: transparent;
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
+  --d-hover: #414141;
   --font-family: "Cabin", Arial, sans-serif;
   --heading-font-family: "Cabin", Arial, sans-serif;
 
@@ -110,7 +111,7 @@ a {
 .dropdown-menu,
 .menu-panel,
 .reply-area {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: $bd-filter;
 }
 
@@ -197,4 +198,12 @@ a {
   inset: unset !important;
   margin: unset !important;
   transform: unset !important;
+  outline: solid 2px var(--tertiary);
+  border: solid 5px transparent;
+}
+
+.select-kit.multi-select.is-expanded .multi-select-header {
+  border-color: transparent;
+  outline: none;
+  outline-offset: 0;
 }
