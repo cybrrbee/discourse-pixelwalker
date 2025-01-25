@@ -219,3 +219,8 @@ a {
 .user-menu .quick-access-panel li:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+.menu-panel .panel-body-bottom .btn,
+.menu-panel .panel-body-bottom .btn:hover {
+  background: transparent;
+}
