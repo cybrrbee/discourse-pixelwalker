@@ -55,7 +55,8 @@ body {
   }
   position: sticky;
   height: calc(
-    var(--composer-vh, var(--1dvh)) * 100 - var(--main-outlet-offset, 0px)
+    var(--composer-vh, var(--1dvh)) * 100 -
+      calc(var(--main-outlet-offset, 0px) * 2 + 0.45em)
   );
   top: var(--main-outlet-offset);
   overflow-y: auto;
