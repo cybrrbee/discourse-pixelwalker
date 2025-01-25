@@ -1,23 +1,23 @@
+$color-bg: rgb(6, 19, 28);
+$header-height: 4em;
+$blur-radius-bg: 5px;
+$bd-filter: blur(5px) brightness(0.3);
+$bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
+
 :root {
+  // Discourse Variable Overrides
   --d-sidebar-admin-background: transparent;
   --header_background: transparent;
   --d-sidebar-background: transparent;
   --d-sidebar-active-background: rgba(255, 255, 255, 0.15);
-  --background-color: rgb(6, 19, 28);
-  --header-height: 4em;
-  --blur-radius: 10px;
-  --background-brightness: 15%;
-
-  --bd-filter: blur(5px) brightness(0.3);
-  --bd-filter-background: blur(10px) brightness(0.2);
-
   --font-family: "Cabin", Arial, sans-serif;
   --heading-font-family: "Cabin", Arial, sans-serif;
 
+  // Discourse Color Variables, to later be replaced with Discourse Color Schemes
   --primary: rgb(234, 234, 234);
   --secondary: rgb(16, 16, 16);
   --tertiary: rgb(255, 222, 112);
-  --tertiary-low: rgb(56, 51, 34);
+  --tertiary-low: mix(var(--primary), var(--tertiary), 20%);
   --tertiary-hover: rgb(255, 239, 157);
 }
 
@@ -40,7 +40,7 @@
 body {
   font-family: var(--font-family);
   background: {
-    color: var(--background-color);
+    color: $color-bg;
     image: url($bg-2x-jpg);
     image: image-set(
       url($bg-avif) type("image/avif") 1x,
@@ -66,8 +66,8 @@ body {
     left: 0;
     pointer-events: none;
     overflow: hidden;
-    backdrop-filter: var(--bd-filter-background);
-    -webkit-backdrop-filter: var(--bd-filter-background);
+    backdrop-filter: $bd-filter-bg;
+    -webkit-backdrop-filter: $bd-filter-bg;
   }
 }
 
@@ -86,34 +86,6 @@ body {
 
 #main-outlet table {
   margin-left: 0;
-}
-
-.bg {
-  height: calc(100% + calc(var(--blur-radius) * 2));
-  width: calc(100% + calc(var(--blur-radius) * 2));
-  filter: blur(var(--blur-radius)) brightness(var(--background-brightness));
-  margin: calc(var(--blur-radius) * -2);
-}
-
-.clipped-container,
-.bg-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.bg-container {
-  z-index: -1;
-}
-
-.clipped-container {
-  height: var(--header-height);
-  z-index: 1;
-
-  .clipped {
-    position: initial;
-  }
 }
 
 a {
@@ -147,7 +119,7 @@ a {
 .menu-panel,
 .reply-area {
   background: transparent;
-  backdrop-filter: var(--bd-filter);
+  backdrop-filter: $bd-filter;
 }
 
 .admin-reports.admin-contents nav,
@@ -223,4 +195,8 @@ a {
 .menu-panel .panel-body-bottom .btn,
 .menu-panel .panel-body-bottom .btn:hover {
   background: transparent;
+}
+
+.user-menu .quick-access-panel li.unread:hover {
+  background: color-mix(in srgb, var(--primary) 30%, var(--tertiary-low) 100%);
 }
