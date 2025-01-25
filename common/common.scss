@@ -12,7 +12,24 @@
   --bd-filter-background: blur(10px) brightness(20%);
 }
 
+@font-face {
+  font-family: "Cabin";
+  src: url($cabin) format("truetype-variations"),
+    url($cabin) format(truetype) tech(variations);
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url($cabin-italic) format("truetype-variations"),
+    url($cabin-italic) format(truetype) tech(variations);
+  font-weight: 400 700;
+  font-style: italic;
+}
+
 body {
+  font-family: "Cabin", sans-serif;
   background: {
     color: var(--background-color);
     image: url($bg-2x-jpg);
