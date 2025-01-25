@@ -187,3 +187,11 @@ a {
 .user-menu .quick-access-panel li.unread:hover {
   background: color-mix(in srgb, var(--primary) 30%, var(--tertiary-low) 100%);
 }
+
+#private-message-users {
+  position: relative;
+}
+
+#private-message-users-body {
+  all: unset !important;
+}
