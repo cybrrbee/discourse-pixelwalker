@@ -142,6 +142,10 @@ a {
   }
 }
 
+.category-list-item h3 a[href],
+.category-list-item h4 a[href],
+.subcategory-list-item h3 a[href],
+.subcategory-list-item h4 a[href],
 .category-list tbody .category h3 a[href],
 .category-list tbody .category h4 a[href] {
   color: var(--tertiary);
