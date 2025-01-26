@@ -291,3 +291,18 @@ a {
 .user-main .about .details {
   background: transparent;
 }
+
+.post-list .post-list-item,
+.user-stream .user-stream-item {
+  background: transparent;
+}
+
+.dialog-content {
+  background: transparent;
+  backdrop-filter: blur(5px) brightness(3);
+  border: solid 1px var(--primary-low-mid);
+}
+
+.dialog-overlay {
+  backdrop-filter: blur(5px);
+}
