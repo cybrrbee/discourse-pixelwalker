@@ -321,6 +321,7 @@ a {
   border: solid 1px var(--primary-low-mid);
 }
 
+.btn.fk-d-menu__trigger,
 .btn.btn-default,
 .btn.btn-icon,
 .menu-panel .panel-body-bottom .btn {
@@ -343,4 +344,8 @@ a {
 .discourse-no-touch .btn.btn-icon:hover .d-icon,
 .menu-panel .panel-body-bottom .btn:hover .d-icon {
   color: var(--primary-very-high);
+}
+
+.btn-flat {
+  background: transparent;
 }
