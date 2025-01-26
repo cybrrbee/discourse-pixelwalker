@@ -311,14 +311,17 @@ a {
   border: solid 1px var(--primary-low-mid);
 }
 
-.btn.btn-default {
+.btn.btn-default,
+.btn.btn-icon {
   color: var(--primary-high);
 }
 
-.discourse-no-touch .btn.btn-default:hover {
+.discourse-no-touch .btn.btn-default:hover,
+.discourse-no-touch .btn.btn-icon:hover {
   color: var(--primary);
 }
 
-.discourse-no-touch .btn.btn-default:hover .d-icon {
+.discourse-no-touch .btn.btn-default:hover .d-icon,
+.discourse-no-touch .btn.btn-icon:hover .d-icon {
   color: var(--primary-very-high);
 }
