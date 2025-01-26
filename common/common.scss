@@ -39,8 +39,7 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   font-style: italic;
 }
 
-body,
-header {
+body {
   font-family: var(--font-family);
   background: {
     color: $color-bg;
@@ -71,6 +70,49 @@ header {
     overflow: hidden;
     backdrop-filter: $bd-filter-bg;
     -webkit-backdrop-filter: $bd-filter-bg;
+  }
+}
+
+header::before {
+  content: "";
+  height: 100vh;
+  height: 100lvh;
+  width: 100vw;
+  width: 100lvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  backdrop-filter: $bd-filter-bg;
+  -webkit-backdrop-filter: $bd-filter-bg;
+}
+
+header::after {
+  content: "";
+  height: 100vh;
+  height: 100lvh;
+  width: 100vw;
+  width: 100lvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: {
+    color: $color-bg;
+    image: url($bg-2x-jpg);
+    image: image-set(
+      url($bg-avif) type("image/avif") 1x,
+      url($bg-2x-avif) type("image/avif") 2x,
+      url($bg-jpg) type("image/jpeg") 1x,
+      url($bg-2x-jpg) type("image/jpeg") 2x
+    );
+    size: cover;
+  }
+
+  @supports not (backdrop-filter: blur(10px)) {
+    background-image: none;
   }
 }
 
