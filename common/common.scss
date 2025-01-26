@@ -50,6 +50,7 @@ body {
       url($bg-jpg) type("image/jpeg") 1x,
       url($bg-2x-jpg) type("image/jpeg") 2x
     );
+    size: auto;
   }
 
   @supports not (backdrop-filter: blur(10px)) {
@@ -107,6 +108,7 @@ header::after {
       url($bg-jpg) type("image/jpeg") 1x,
       url($bg-2x-jpg) type("image/jpeg") 2x
     );
+    size: auto;
   }
 
   @supports not (backdrop-filter: blur(10px)) {
