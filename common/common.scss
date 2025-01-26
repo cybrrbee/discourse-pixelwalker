@@ -39,7 +39,8 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   font-style: italic;
 }
 
-body {
+body,
+header {
   font-family: var(--font-family);
   background: {
     color: $color-bg;
