@@ -1,10 +1,41 @@
+// Variables
 $color-bg: rgb(6, 19, 28);
-$blur-radius-bg: 5px;
-$bd-filter: blur(5px) brightness(0.3);
-$bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
+$blur-radius: 5px;
+$backdrop-filter: blur($blur-radius) brightness(0.3);
+$backdrop-filter-bg: blur($blur-radius) brightness(0.2);
+$transition-default: 0.2s ease-in-out;
 
+// Font faces
+@font-face {
+  font-family: "Cabin";
+  src: url($cabin) format("truetype-variations"),
+    url($cabin) format("truetype") tech(variations);
+  font-weight: 400 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cabin";
+  src: url($cabin-italic) format("truetype-variations"),
+    url($cabin-italic) format("truetype") tech(variations);
+  font-weight: 400 700;
+  font-style: italic;
+}
+
+// Root variables
 :root {
-  // Discourse Variable Overrides
+  // Typography
+  --font-family: "Cabin", Arial, sans-serif;
+  --heading-font-family: "Cabin", Arial, sans-serif;
+
+  // Colors
+  --primary: rgb(234, 234, 234);
+  --secondary: rgb(16, 16, 16);
+  --tertiary: rgb(255, 222, 112);
+  --tertiary-low: rgba(67, 63, 48, 0.7);
+  --tertiary-hover: rgb(255, 247, 207);
+
+  // UI Elements
   --d-sidebar-admin-background: transparent;
   --header_background: transparent;
   --d-sidebar-background: transparent;
@@ -12,20 +43,8 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   --d-nav-bg-color--active: rgba(255, 255, 255, 0.1);
   --d-input-bg-color: transparent;
   --d-hover: rgba(255, 255, 255, 0.2);
-  --font-family: "Cabin", Arial, sans-serif;
-  --heading-font-family: "Cabin", Arial, sans-serif;
 
-  // Discourse Color Variables, to later be replaced with Discourse Color Schemes
-  --primary: rgb(234, 234, 234);
-  // --primary-very-low: rgba(0, 0, 0, 0.4);
-  // --primary-low: rgba(255, 255, 255, 0.15);
-  // --primary-medium: rgba(255, 255, 255, 0.25);
-  --secondary: rgb(16, 16, 16);
-  --tertiary: rgb(255, 222, 112);
-  --tertiary-low: rgba(67, 63, 48, 0.7);
-  --tertiary-hover: rgb(255, 247, 207);
-
-  // Other
+  // Buttons
   --btn-default-bg-color: color-mix(in srgb, var(--primary), transparent 90%);
   --btn-default-bg-color-hover: color-mix(
     in srgb,
@@ -34,27 +53,11 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   );
 }
 
-@font-face {
-  font-family: "Cabin";
-  src: url($cabin) format("truetype-variations"),
-    url($cabin) format(truetype) tech(variations);
-  font-weight: 400 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cabin";
-  src: url($cabin-italic) format("truetype-variations"),
-    url($cabin-italic) format(truetype) tech(variations);
-  font-weight: 400 700;
-  font-style: italic;
-}
-
+// Base styles
 body {
   font-family: var(--font-family);
   background: {
     color: $color-bg;
-    image: url($bg-2x-jpg);
     image: image-set(
       url($bg-avif) type("image/avif") 1x,
       url($bg-2x-avif) type("image/avif") 2x,
@@ -70,108 +73,95 @@ body {
 
   &::before {
     content: "";
-    height: 100vh;
     height: 100lvh;
-    width: 100vw;
     width: 100lvw;
     position: fixed;
     top: 0;
     left: 0;
     pointer-events: none;
     overflow: hidden;
-    backdrop-filter: $bd-filter-bg;
+    backdrop-filter: $backdrop-filter-bg;
   }
 }
 
-header::before {
-  content: "";
-  height: var(--header-offset);
-  width: 100vw;
-  width: 100lvw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  overflow: hidden;
-  backdrop-filter: $bd-filter-bg;
-}
-
-header::after {
-  content: "";
-  height: var(--header-offset);
-  width: 100vw;
-  width: 100lvw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  overflow: hidden;
-  background: {
-    color: $color-bg;
-    image: url($bg-2x-jpg);
-    image: image-set(
-      url($bg-avif) type("image/avif") 1x,
-      url($bg-2x-avif) type("image/avif") 2x,
-      url($bg-jpg) type("image/jpeg") 1x,
-      url($bg-2x-jpg) type("image/jpeg") 2x
-    );
-    size: auto;
+// Header styles
+header {
+  &::before,
+  &::after {
+    content: "";
+    height: var(--header-offset);
+    width: 100lvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
   }
 
-  @supports not (backdrop-filter: blur(10px)) {
-    background-image: none;
+  &::before {
+    backdrop-filter: $backdrop-filter-bg;
   }
 
-  z-index: -1;
+  &::after {
+    background: {
+      color: $color-bg;
+      image: image-set(
+        url($bg-avif) type("image/avif") 1x,
+        url($bg-2x-avif) type("image/avif") 2x,
+        url($bg-jpg) type("image/jpeg") 1x,
+        url($bg-2x-jpg) type("image/jpeg") 2x
+      );
+      size: auto;
+    }
+    z-index: -1;
+
+    @supports not (backdrop-filter: blur(10px)) {
+      background-image: none;
+    }
+  }
 }
 
-.sidebar-section[data-section-name="categories"] {
-  display: none;
-}
-
-.category-breadcrumb {
-  display: none;
-}
-
-.category-drop {
-  display: none;
-}
-
-.tag-drop {
-  display: none;
-}
-
+// Links
 a {
   color: var(--tertiary);
-  transition: filter 0.2s ease-in-out;
-
-  &.category-name {
-    color: var(--tertiary);
-  }
+  transition: filter $transition-default;
 
   &:hover {
     filter: brightness(1.3);
   }
+
+  &.category-name {
+    color: var(--tertiary);
+  }
 }
 
-.category-list-item h3 a[href],
-.category-list-item h4 a[href],
-.subcategory-list-item h3 a[href],
-.subcategory-list-item h4 a[href],
-.category-list tbody .category h3 a[href],
-.category-list tbody .category h4 a[href] {
-  color: var(--tertiary);
+// Hidden elements
+.sidebar-section[data-section-name="categories"],
+.category-breadcrumb,
+.category-drop,
+.tag-drop {
+  display: none;
 }
 
-#reply-control {
-  background: transparent;
+// Category styles
+.category-list-item,
+.subcategory-list-item,
+.category-list tbody .category {
+  h3,
+  h4 {
+    a[href] {
+      color: var(--tertiary);
+    }
+  }
 }
 
+// UI Components with backdrop
 .select-kit-body,
 .dropdown-menu,
 .menu-panel,
 .reply-area {
   background: transparent;
+
   &::before {
     content: "";
     width: 100%;
@@ -180,193 +170,125 @@ a {
     top: 0;
     left: 0;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: $bd-filter;
+    backdrop-filter: $backdrop-filter;
     z-index: -1;
   }
 }
 
-.admin-reports.admin-contents nav,
-.dashboard-next.admin-contents nav {
-  position: relative;
-  width: initial;
-  padding-left: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.boxed.white {
-  background: transparent;
-}
-
-.dashboard-next .charts .chart-canvas {
-  padding: 1em;
-}
-
-.admin-report-chart {
-  background: white;
-  border-radius: 10px;
-}
-
-.admin-report-stacked-chart .chart-canvas-container {
-  height: calc(250px + 2em);
-}
-
-.sidebar-footer-wrapper .sidebar-footer-container::before {
-  all: initial;
-}
-
-.dashboard-next .nav::before {
-  all: initial;
-}
-
-.dashboard-next .nav::after {
-  all: initial;
-}
-
-#create-topic[disabled],
-#create-topic[disabled] + span {
-  display: none;
-}
-
-.user-menu.revamped .tabs-list .btn.active {
-  filter: brightness(3);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.user-menu.revamped .tabs-list .btn.active:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.user-menu.revamped .tabs-list .btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.user-menu .quick-access-panel li,
-.user-menu .quick-access-panel .read {
-  background: transparent;
-}
-
-.d-editor-textarea-wrapper {
-  background: transparent;
-}
-
-.select-kit.multi-select,
-.select-kit.multi-select .multi-select-header {
-  background: transparent;
-}
-
-.user-menu .quick-access-panel li:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.user-menu .quick-access-panel li.unread:hover {
-  background: color-mix(in srgb, var(--primary) 30%, var(--tertiary-low) 100%);
-}
-
-.select-kit.is-expanded .select-kit-body {
-  background: transparent;
-}
-
-.select-kit .select-kit-body {
-  background: transparent;
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px) brightness(0.5);
-    z-index: -1;
+// Admin specific styles
+.admin-reports.admin-contents,
+.dashboard-next.admin-contents {
+  nav {
+    position: relative;
+    width: initial;
+    padding-left: 0;
+    margin: 0;
   }
 }
 
-.select-kit.combo-box .select-kit-header {
-  background: transparent;
+.dashboard-next {
+  .charts .chart-canvas {
+    padding: 1em;
+  }
+
+  .nav {
+    &::before,
+    &::after {
+      all: initial;
+    }
+  }
 }
 
-.sidebar-section-link-wrapper .sidebar-section-link:focus,
-.sidebar-section-link-wrapper .sidebar-section-link:hover {
-  filter: brightness(1.3);
+// User menu styles
+.user-menu {
+  &.revamped {
+    .tabs-list .btn {
+      &.active {
+        filter: brightness(3);
+        background: rgba(255, 255, 255, 0.2);
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  .quick-access-panel {
+    li {
+      background: transparent;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      &.unread:hover {
+        background: color-mix(
+          in srgb,
+          var(--primary) 30%,
+          var(--tertiary-low) 100%
+        );
+      }
+    }
+  }
 }
 
-.menu-panel.slide-in {
-  max-width: calc(100vw - 9.5rem);
-}
-
-.user-content {
-  background: transparent;
-}
-
-.user-main .about.collapsed-info .details,
-.user-main .about .details {
-  background: transparent;
-}
-
-.post-list .post-list-item,
-.user-stream .user-stream-item {
-  background: transparent;
-}
-
+// Dialog and modal styles
 .dialog-overlay,
 .modal {
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur($blur-radius);
 }
 
 .dialog-content,
 .d-modal__container {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: $bd-filter;
+  backdrop-filter: $backdrop-filter;
   border: solid 1px var(--primary-low-mid);
 }
 
-.btn.fk-d-menu__trigger,
-.btn.btn-default,
-.btn.btn-icon,
-.menu-panel .panel-body-bottom .btn {
-  color: var(--primary-very-high);
-  background: var(--btn-default-bg-color);
+// Button styles
+.btn {
+  &.fk-d-menu__trigger,
+  &.btn-default,
+  &.btn-icon,
+  .menu-panel .panel-body-bottom & {
+    color: var(--primary-very-high);
+    background: var(--btn-default-bg-color);
+
+    .d-icon {
+      color: var(--primary-high);
+    }
+
+    &:hover {
+      background: var(--btn-default-bg-color-hover);
+      color: var(--primary);
+
+      .d-icon {
+        color: var(--primary-very-high);
+      }
+    }
+  }
+
+  &.btn-flat {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
 }
 
-.menu-panel .panel-body-bottom .btn .d-icon {
-  color: var(--primary-high);
-}
+// Header icon states
+.d-header-icons .icon {
+  &:focus .d-icon {
+    color: var(--primary);
+  }
 
-.discourse-no-touch .btn.btn-default:hover,
-.discourse-no-touch .btn.btn-icon:hover,
-.menu-panel .panel-body-bottom .btn:hover {
-  background: var(--btn-default-bg-color-hover);
-  color: var(--primary);
-}
-
-.discourse-no-touch .btn.btn-default:hover .d-icon,
-.discourse-no-touch .btn.btn-icon:hover .d-icon,
-.menu-panel .panel-body-bottom .btn:hover .d-icon {
-  color: var(--primary-very-high);
-}
-
-.btn.btn-flat,
-.discourse-no-touch .btn.btn-flat:hover {
-  background: transparent;
-}
-
-.discourse-no-touch .d-header-icons .icon:focus .d-icon {
-  color: var(--primary);
-}
-
-.d-header-icons .icon:active .d-icon,
-.discourse-no-touch .btn.btn-icon:active:not(:hover, :focus) .d-icon,
-.btn.btn-icon:active:not(:hover, :focus) .d-icon {
-  color: var(--primary);
-}
-
-.discourse-no-touch .btn:active:not(:hover, :focus) .d-icon,
-.btn:active:not(:hover, :focus) .d-icon {
-  color: var(--primary-very-high);
-}
-
-.discourse-no-touch .btn:active:not(:hover, :focus),
-.btn:active:not(:hover, :focus) {
-  color: var(--primary);
+  &:active .d-icon {
+    color: var(--primary);
+  }
 }
