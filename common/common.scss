@@ -39,12 +39,9 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   font-style: italic;
 }
 
-body {
+body,
+header {
   font-family: var(--font-family);
-}
-
-header::before,
-header::after {
   background: {
     color: $color-bg;
     image: url($bg-2x-jpg);
@@ -60,18 +57,25 @@ header::after {
   @supports not (backdrop-filter: blur(10px)) {
     background-image: none;
   }
-  content: "";
-  height: 100vh;
-  height: 100lvh;
-  width: 100vw;
-  width: 100lvw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  overflow: hidden;
-  backdrop-filter: $bd-filter-bg;
-  -webkit-backdrop-filter: $bd-filter-bg;
+
+  &::before {
+    content: "";
+    height: 100vh;
+    height: 100lvh;
+    width: 100vw;
+    width: 100lvw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    backdrop-filter: $bd-filter-bg;
+    -webkit-backdrop-filter: $bd-filter-bg;
+  }
+}
+
+header {
+  clip-path: inset(0);
 }
 
 .sidebar-section[data-section-name="categories"] {
