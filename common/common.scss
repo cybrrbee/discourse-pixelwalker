@@ -365,3 +365,8 @@ a {
 .btn:active:not(:hover, :focus) .d-icon {
   color: var(--primary-very-high);
 }
+
+.discourse-no-touch .btn:active:not(:hover, :focus),
+.btn:active:not(:hover, :focus) {
+  color: var(--primary);
+}
