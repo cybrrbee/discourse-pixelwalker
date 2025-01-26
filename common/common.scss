@@ -350,3 +350,11 @@ a {
 .discourse-no-touch .btn.btn-flat:hover {
   background: transparent;
 }
+
+.discourse-no-touch .d-header-icons .icon:focus .d-icon {
+  color: var(--primary);
+}
+
+.d-header-icons .icon:active .d-icon {
+  color: var(--primary);
+}
