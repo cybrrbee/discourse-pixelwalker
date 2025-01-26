@@ -68,7 +68,6 @@ body {
     pointer-events: none;
     overflow: hidden;
     backdrop-filter: $bd-filter-bg;
-    -webkit-backdrop-filter: $bd-filter-bg;
   }
 }
 
@@ -83,7 +82,6 @@ header::before {
   pointer-events: none;
   overflow: hidden;
   backdrop-filter: $bd-filter-bg;
-  -webkit-backdrop-filter: $bd-filter-bg;
 }
 
 header::after {
@@ -158,7 +156,15 @@ a {
 .menu-panel,
 .reply-area {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: $bd-filter;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: $bd-filter;
+  }
 }
 
 .admin-reports.admin-contents nav,
