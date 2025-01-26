@@ -74,6 +74,10 @@ header {
   }
 }
 
+header {
+  clip-path: inset(0);
+}
+
 .sidebar-section[data-section-name="categories"] {
   display: none;
 }
