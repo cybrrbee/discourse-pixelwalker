@@ -297,12 +297,14 @@ a {
   background: transparent;
 }
 
-.dialog-content {
+.dialog-overlay,
+.modal {
+  backdrop-filter: blur(5px);
+}
+
+.dialog-content,
+.d-modal__container {
   background: transparent;
   backdrop-filter: blur(5px) brightness(3);
   border: solid 1px var(--primary-low-mid);
-}
-
-.dialog-overlay {
-  backdrop-filter: blur(5px);
 }
