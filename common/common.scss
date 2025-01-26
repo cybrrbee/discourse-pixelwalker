@@ -59,10 +59,10 @@ body {
 
   &::before {
     content: "";
-    height: 100vh;
-    height: 100lvh;
-    width: 100vw;
-    width: 100lvw;
+    height: 105vh;
+    height: 105lvh;
+    width: 105vw;
+    width: 105lvw;
     position: fixed;
     top: 0;
     left: 0;
@@ -71,23 +71,6 @@ body {
     backdrop-filter: $bd-filter-bg;
     -webkit-backdrop-filter: $bd-filter-bg;
   }
-}
-
-#main-outlet {
-  --1dvh: 1vh;
-  @supports (height: 1dvh) {
-    --1dvh: 1dvh;
-  }
-  position: sticky;
-  height: calc(
-    var(--composer-vh, var(--1dvh)) * 100 - var(--main-outlet-offset, 0px)
-  );
-  top: var(--main-outlet-offset);
-  overflow-y: auto;
-}
-
-#main-outlet table {
-  margin-left: 0;
 }
 
 .sidebar-section[data-section-name="categories"] {
