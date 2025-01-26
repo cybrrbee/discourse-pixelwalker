@@ -17,13 +17,25 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
 
   // Discourse Color Variables, to later be replaced with Discourse Color Schemes
   --primary: rgb(234, 234, 234);
-  --primary-very-low: rgba(0, 0, 0, 0.4);
-  --primary-low: rgba(255, 255, 255, 0.15);
-  --primary-medium: rgba(255, 255, 255, 0.25);
+  // --primary-very-low: rgba(0, 0, 0, 0.4);
+  // --primary-low: rgba(255, 255, 255, 0.15);
+  // --primary-medium: rgba(255, 255, 255, 0.25);
   --secondary: rgb(16, 16, 16);
   --tertiary: rgb(255, 222, 112);
   --tertiary-low: rgba(67, 63, 48, 0.7);
   --tertiary-hover: rgb(255, 247, 207);
+
+  // Other
+  --btn-default-bg-color: color-mix(
+    in srgb,
+    var(var(--primary)),
+    transparent 90%
+  );
+  --btn-default-bg-color-hover: color-mix(
+    in srgb,
+    var(var(--primary)),
+    transparent 75%
+  );
 }
 
 @font-face {
@@ -317,23 +329,17 @@ a {
 .btn.btn-icon,
 .menu-panel .panel-body-bottom .btn {
   color: var(--primary-very-high);
+  background: var(--btn-default-bg-color);
 }
 
 .menu-panel .panel-body-bottom .btn .d-icon {
   color: var(--primary-high);
 }
 
-.menu-panel .panel-body-bottom .btn {
-  background: var(--primary-low);
-}
-
-.menu-panel .panel-body-bottom .btn:hover {
-  background: var(--primary-medium);
-}
-
 .discourse-no-touch .btn.btn-default:hover,
 .discourse-no-touch .btn.btn-icon:hover,
 .menu-panel .panel-body-bottom .btn:hover {
+  background: var(--btn-default-bg-color-hover);
   color: var(--primary);
 }
 
