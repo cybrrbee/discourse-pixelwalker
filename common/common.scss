@@ -312,16 +312,19 @@ a {
 }
 
 .btn.btn-default,
-.btn.btn-icon {
+.btn.btn-icon,
+.menu-panel .panel-body-bottom .btn {
   color: var(--primary-very-high);
 }
 
 .discourse-no-touch .btn.btn-default:hover,
-.discourse-no-touch .btn.btn-icon:hover {
+.discourse-no-touch .btn.btn-icon:hover,
+.menu-panel .panel-body-bottom .btn:hover {
   color: var(--primary);
 }
 
 .discourse-no-touch .btn.btn-default:hover .d-icon,
-.discourse-no-touch .btn.btn-icon:hover .d-icon {
+.discourse-no-touch .btn.btn-icon:hover .d-icon,
+.menu-panel .panel-body-bottom .btn:hover .d-icon {
   color: var(--primary-very-high);
 }
