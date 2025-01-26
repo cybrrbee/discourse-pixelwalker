@@ -311,17 +311,14 @@ a {
   border: solid 1px var(--primary-low-mid);
 }
 
-.btn:not(.btn-primary, .btn-danger, .btn-cancel, .btn-ok, .btn-social) {
+.btn.btn-default {
   color: var(--primary-high);
 }
 
-.discourse-no-touch
-  .btn:not(.btn-primary, .btn-danger, .btn-cancel, .btn-ok, .btn-social):hover {
+.discourse-no-touch .btn.btn-default:hover {
   color: var(--primary);
 }
 
-.discourse-no-touch
-  .btn:not(.btn-primary, .btn-danger, .btn-cancel, .btn-ok, .btn-social):hover
-  .d-icon {
+.discourse-no-touch .btn.btn-default:hover .d-icon {
   color: var(--primary-very-high);
 }
