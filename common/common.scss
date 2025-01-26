@@ -318,3 +318,7 @@ a {
 .discourse-no-touch .btn:hover {
   color: var(--primary);
 }
+
+.discourse-no-touch .btn:hover .d-icon {
+  color: var(--primary-very-high);
+}
