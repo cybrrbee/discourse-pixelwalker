@@ -197,17 +197,6 @@ a {
   background: color-mix(in srgb, var(--primary) 30%, var(--tertiary-low) 100%);
 }
 
-.select-kit {
-  position: relative;
-}
-
-.select-kit.is-expanded .select-kit-body {
-  position: absolute !important;
-  inset: unset !important;
-  margin: unset !important;
-  transform: unset !important;
-}
-
 .select-kit.is-expanded .select-kit-body {
   background: transparent;
 }
