@@ -26,14 +26,10 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
   --tertiary-hover: rgb(255, 247, 207);
 
   // Other
-  --btn-default-bg-color: color-mix(
-    in srgb,
-    var(var(--primary)),
-    transparent 90%
-  );
+  --btn-default-bg-color: color-mix(in srgb, var(--primary), transparent 90%);
   --btn-default-bg-color-hover: color-mix(
     in srgb,
-    var(var(--primary)),
+    var(--primary),
     transparent 75%
   );
 }
