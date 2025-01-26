@@ -346,6 +346,7 @@ a {
   color: var(--primary-very-high);
 }
 
-.btn.btn-flat {
+.btn.btn-flat,
+.discourse-no-touch .btn.btn-flat:hover {
   background: transparent;
 }
