@@ -317,6 +317,18 @@ a {
   color: var(--primary-very-high);
 }
 
+.menu-panel .panel-body-bottom .btn .d-icon {
+  color: var(--primary-high);
+}
+
+.menu-panel .panel-body-bottom .btn {
+  background: var(--primary-low);
+}
+
+.menu-panel .panel-body-bottom .btn:hover {
+  background: var(--primary-medium);
+}
+
 .discourse-no-touch .btn.btn-default:hover,
 .discourse-no-touch .btn.btn-icon:hover,
 .menu-panel .panel-body-bottom .btn:hover {
