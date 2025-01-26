@@ -16,7 +16,7 @@ $bd-filter-bg: blur($blur-radius-bg) brightness(0.2);
 
   // Discourse Color Variables, to later be replaced with Discourse Color Schemes
   --primary: rgb(234, 234, 234);
-  --primary-low: rgba(255, 255, 255, 0.1);
+  --primary-low: rgba(255, 255, 255, 0.15);
   --primary-medium: rgba(255, 255, 255, 0.25);
   --secondary: rgb(16, 16, 16);
   --tertiary: rgb(255, 222, 112);
@@ -313,7 +313,7 @@ a {
 
 .btn.btn-default,
 .btn.btn-icon {
-  color: var(--primary-high);
+  color: var(--primary-very-high);
 }
 
 .discourse-no-touch .btn.btn-default:hover,
