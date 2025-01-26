@@ -116,10 +116,6 @@ header::after {
   z-index: -1;
 }
 
-header {
-  clip-path: inset(0);
-}
-
 .sidebar-section[data-section-name="categories"] {
   display: none;
 }
