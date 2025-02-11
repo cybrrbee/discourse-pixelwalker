@@ -750,8 +750,12 @@ a {
 
       &:hover {
         filter: initial;
-        color: var(--d-nav-color--active);
         background: transparent;
+
+        &,
+        &.d-icon {
+          color: var(--d-nav-color--active);
+        }
 
         &::after {
           background: var(--tertiary);
