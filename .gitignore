@@ -1,1 +1,6 @@
 .DS_Store
+.discourse_theme
+.env
+stylelint.config.mjs
+cleanup.scss
+dirty.scss
