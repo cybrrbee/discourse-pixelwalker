@@ -9,5 +9,13 @@
     "bg-2x-avif": "assets/backgrounds/bg-2x.avif",
     "cabin": "assets/fonts/cabin.ttf",
     "cabin-italic": "assets/fonts/cabin-italic.ttf"
+  },
+  "color_schemes": {
+    "PDark": {
+      "primary": "eaeaea",
+      "secondary": "101010",
+      "tertiary": "ffde70",
+      "danger": "f84747"
+    }
   }
 }
