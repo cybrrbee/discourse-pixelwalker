@@ -4,3 +4,4 @@
 stylelint.config.mjs
 cleanup.scss
 dirty.scss
+node_modules
