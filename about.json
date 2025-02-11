@@ -16,6 +16,12 @@
       "secondary": "101010",
       "tertiary": "ffde70",
       "danger": "f84747"
+    },
+    "PLight": {
+      "primary": "101010",
+      "secondary": "eaeaea",
+      "tertiary": "583d12",
+      "danger": "c80001"
     }
   }
 }
